@@ -8,16 +8,16 @@ export default {
         try {
             const { username, password } = req.body;
             if (!username || !password) {
-                throw new Error("fill_the_rows");
+                throw new Error("Fill the rows");
             }
             const admin = await adminModel.findOne({ username: username.toLowerCase().trim(), password: md5(password) });
             if (!admin) {
-                throw new Error("invalid_user");
+                throw new Error("Username or password incorrect");
             }
             const access = jwt.sign({ _id: admin._id }, ADMIN_JWT, { expiresIn: '1d' });
             return res.send({
                 ok: true,
-                msg: "login_success",
+                msg: "Successfully signed in",
                 access,
                 data: {
                     _id: admin._id,
@@ -32,7 +32,7 @@ export default {
             });
         }
     },
-    verify: async (req,res)=>{
+    verify: async (req, res) => {
         const admin = req.admin;
         return res.send({
             ok: true,

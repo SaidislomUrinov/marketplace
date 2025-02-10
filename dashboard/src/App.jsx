@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getReq } from "./utils/reqs";
 import { updateUser } from "./contexts/user";
+import Auth from "./components/auth";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dp = useDispatch();
@@ -17,7 +19,10 @@ function App() {
     })
   }, []);
   return (
-    <div className="flex"></div>
+    <div className="flex">
+      {!_id && <Auth />}
+      <Toaster containerStyle={{ zIndex: '99999' }} toastOptions={{ style: { maxWidth: '600px' } }} />
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@
 * {
     border: none;
     outline: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     backdrop-filter: none !important;
 }
 

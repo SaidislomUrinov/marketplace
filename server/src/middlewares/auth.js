@@ -5,13 +5,13 @@ export const admin = async (req, res, next) => {
     try {
         const { authorization } = req.headers;
         if (!authorization || !authorization.startsWith('Bearer ')) {
-            throw new Error('auth_error');
+            throw new Error('Auth error');
         }
         const access = authorization.split(' ')[1];
         const decoded = jwt.verify(access, ADMIN_JWT);
         const admin = await adminModel.findOne({ _id: decoded._id });
         if (!admin) {
-            throw new Error('auth_error');
+            throw new Error('Auth error');
         }
         req.admin = admin;
         next();
