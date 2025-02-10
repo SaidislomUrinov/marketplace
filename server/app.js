@@ -1,0 +1,13 @@
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import fileUpload from 'express-fileupload';
+import { MONGO_URI, PORT } from './src/utils/env.js';
+import router from './src/router.js';
+const app = express();
+mongoose.connect(MONGO_URI);
+app.use(cors());
+app.use(fileUpload());
+app.use(express.json());
+app.use('/api', router);
+app.listen(PORT);

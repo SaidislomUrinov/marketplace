@@ -11,5 +11,17 @@
   "devDependencies": {
     "dotenv": "^16.4.7",
     "nodemon": "^3.1.9"
-  }
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": ""
 }
