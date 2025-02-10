@@ -24,3 +24,6 @@ button {
 button:active {
     transform: scale(0.9);
 }
+*::-webkit-scrollbar{
+    display: none;
+}
