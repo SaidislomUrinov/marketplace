@@ -9,7 +9,7 @@ function NavLink({ path = '', name = '', icon }) {
     const p = useLocation().pathname;
     const Icon = icon
     return (
-        <Link className={`flex rounded-[10px] px-[10px] ${p === path ? 'text-white bg-gradient-to-b from-blue-gray-400 to-blue-gray-900' : 'text-blue-gray-300'} text-[14px] items-center group justify-start gap-[20px] w-full min-h-[40px]`} to={path}>
+        <Link className={`flex rounded-[10px] px-[10px] ${p === path ? 'text-white bg-black' : 'text-blue-gray-400'} text-[14px] items-center group justify-start gap-[20px] w-full min-h-[40px]`} to={path}>
             <Icon className="text-[20px] group-hover:mr-[15px] duration-300" />
             <span className="capitalize">{name}</span>
         </Link>

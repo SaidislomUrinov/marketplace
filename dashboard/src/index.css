@@ -10,10 +10,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
-    background: #F8F7FC;
+
+body {
+    background: #f3f3f3;
     height: 100vh;
 }
+
 button {
     display: flex;
     align-items: center;
@@ -24,6 +26,7 @@ button {
 button:active {
     transform: scale(0.9);
 }
-*::-webkit-scrollbar{
+
+*::-webkit-scrollbar {
     display: none;
 }
