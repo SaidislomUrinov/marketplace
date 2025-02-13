@@ -4,3 +4,4 @@ import productController from "../controllers/product.controller.js";
 
 export default Router()
     .post('/add', admin, productController.create)
+    .get('/list', admin, productController.list)

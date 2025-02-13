@@ -8,6 +8,7 @@ import Navbar from "./components/navbar";
 import Top from "./components/top";
 import { Route, Routes } from "react-router-dom";
 import Categories from "./pages/categories";
+import Products from "./pages/products/products";
 
 function App() {
   const dp = useDispatch();
@@ -35,6 +36,8 @@ function App() {
             {/* routes */}
             <Routes>
               <Route path="/categories" element={<Categories />} />
+              <Route path="/products" element={<Products />} />
+
             </Routes>
           </div>
         </div>
