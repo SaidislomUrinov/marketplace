@@ -9,7 +9,11 @@ const getReq = (pref = '', params) => {
     });
 };
 const postReq = (pref = '', data = {}, params) => {
-    return axios.post(`${API}/api${pref}`, data, {
+    const f = new FormData();
+    Object.entries(data).forEach(([k, v]) => {
+        f.append(k, v);
+    })
+    return axios.post(`${API}/api${pref}`, f, {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('access')}`
         },
@@ -17,7 +21,11 @@ const postReq = (pref = '', data = {}, params) => {
     });
 };
 const putReq = (pref = '', data = {}, params) => {
-    return axios.put(`${API}/api${pref}`, data, {
+    const f = new FormData();
+    Object.entries(data).forEach(([k, v]) => {
+        f.append(k, v);
+    })
+    return axios.put(`${API}/api${pref}`, f, {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('access')}`
         },

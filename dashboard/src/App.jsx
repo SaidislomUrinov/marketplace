@@ -6,6 +6,8 @@ import Auth from "./components/auth";
 import { Toaster } from "react-hot-toast";
 import Navbar from "./components/navbar";
 import Top from "./components/top";
+import { Route, Routes } from "react-router-dom";
+import Categories from "./pages/categories";
 
 function App() {
   const dp = useDispatch();
@@ -31,6 +33,9 @@ function App() {
           <Top />
           <div className="flex items-center pb-[10px] px-[10px] justify-start flex-col h-[100vh] w-full overflow-y-scroll">
             {/* routes */}
+            <Routes>
+              <Route path="/categories" element={<Categories />} />
+            </Routes>
           </div>
         </div>
       </div>}

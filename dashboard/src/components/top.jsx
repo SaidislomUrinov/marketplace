@@ -2,12 +2,13 @@ import { useLocation } from "react-router-dom";
 const links = {
     dashboard: 'Dashboard',
     orders: 'orders',
-    'search-order': 'search-order',
+    'search-order': 'search order',
     products: 'products',
+    categories: 'categories',
     shipping: 'shipping',
     payments: 'payments',
     users: 'users',
-    'search-user': 'search-user',
+    'search-user': 'search user',
     settings: 'settings',
     logout: 'logout',
 }

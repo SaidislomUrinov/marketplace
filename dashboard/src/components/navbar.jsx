@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { BiLogOut, BiSolidDashboard } from "react-icons/bi";
-import { FaBars, FaBox, FaCreditCard, FaSearch, FaShoppingCart, FaTruck } from "react-icons/fa";
+import { FaBars, FaBox, FaCreditCard, FaSearch, FaShoppingCart, FaThList, FaTruck } from "react-icons/fa";
 import { FaBoxesStacked, FaGear, FaXmark } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
@@ -9,7 +9,7 @@ function NavLink({ path = '', name = '', icon }) {
     const p = useLocation().pathname;
     const Icon = icon
     return (
-        <Link className={`flex rounded-[10px] px-[10px] ${p === path ? 'text-white bg-black' : 'text-blue-gray-400'} text-[14px] items-center group justify-start gap-[20px] w-full min-h-[40px]`} to={path}>
+        <Link className={`flex rounded-[7px] px-[10px] ${p === path ? 'text-white bg-black' : 'text-blue-gray-900'} text-[14px] items-center group justify-start gap-[20px] w-full min-h-[40px]`} to={path}>
             <Icon className="text-[20px] group-hover:mr-[15px] duration-300" />
             <span className="capitalize">{name}</span>
         </Link>
@@ -46,6 +46,7 @@ function Navbar() {
                     <NavLink path={'/'} name={"Dashboard"} icon={BiSolidDashboard} />
                     <NavLink path={'/orders'} name={"orders"} icon={FaShoppingCart} />
                     <NavLink path={'/search-order'} name={"search order"} icon={FaBox} />
+                    <NavLink path={'/categories'} name={"categories"} icon={FaThList} />
                     <NavLink path={'/products'} name={"products"} icon={FaBoxesStacked} />
                     <NavLink path={'/shipping'} name={"shipping"} icon={FaTruck} />
                     <NavLink path={'/payments'} name={"payments"} icon={FaCreditCard} />

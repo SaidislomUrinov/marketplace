@@ -10,5 +10,6 @@ mongoose.connect(MONGO_URI);
 app.use(cors());
 app.use(fileUpload());
 app.use(express.json());
+app.use('/public',express.static('public'));
 app.use('/api', router);
 app.listen(PORT);
